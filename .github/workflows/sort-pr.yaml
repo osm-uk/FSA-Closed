@@ -2,7 +2,6 @@ name: Sort PR
 
 on:
   pull_request:
-  workflow_dispatch:
 
 jobs:
   sort:
@@ -10,5 +9,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
       - name: Sort the data
         run: ./sort.sh
