@@ -12,6 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
-        run: sudo apt install pipenv
+        run: pip install pipenv --user
       - name: Pull data
         run: ./run.sh
