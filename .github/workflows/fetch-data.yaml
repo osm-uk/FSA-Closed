@@ -1,0 +1,15 @@
+name: Fetch data from TagInfo
+
+on:
+	schedule:
+		- cron: '4 4 * * *'
+	workflow_dispatch:
+
+jobs:
+	fetch-data:
+		runs-on: ubuntu-latest
+
+		steps:
+			- uses: actions/checkout@v4
+			- name: Pull data
+			  run: ./run.sh
